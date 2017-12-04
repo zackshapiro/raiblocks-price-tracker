@@ -61,6 +61,7 @@
 		51857F891FB79EAF00D040DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51857F911FB7A06D00D040DC /* xrb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xrb.png; sourceTree = "<group>"; };
 		519B4D731FD5ABA2006B7B6E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		519B4D751FD5B5A5006B7B6E /* Rai.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rai.mobileprovision; path = ../../Downloads/Rai.mobileprovision; sourceTree = "<group>"; };
 		5489F35131253BB6AF27B899 /* Pods-RaiToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiToday/Pods-RaiToday.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB658829FBA8689D26DD186 /* Pods-Rai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rai.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rai/Pods-Rai.release.xcconfig"; sourceTree = "<group>"; };
 		B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +92,7 @@
 		2B99046D30DF1D188E292E3F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				519B4D751FD5B5A5006B7B6E /* Rai.mobileprovision */,
 				10EF7ED73DB7205883AF5E44 /* Pods_Rai.framework */,
 				51857F811FB79EAF00D040DC /* NotificationCenter.framework */,
 				B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */,

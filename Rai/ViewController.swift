@@ -46,6 +46,10 @@ class ViewController: UIViewController {
         
         self.btcBalanceLabel?.text = "\(String(balance)) BTC"
     }
+
+    private var isiPhoneX: Bool {
+        return UIScreen.main.bounds.height == 812
+    }
     
     @objc private func getPriceAndSetLabel() {
         guard let url = URL(string: "https://mercatox.com/public/json24") else { fatalError("url failed to cast") }
@@ -137,7 +141,11 @@ class ViewController: UIViewController {
         self.textField = textField
         
         constrain(ownedView) {
-            self.ownedViewTopConstraint = $0.top == $0.superview!.top // - CGFloat(30)
+            if isiPhoneX {
+                self.ownedViewTopConstraint = $0.top == $0.superview!.top + CGFloat(34)
+            } else {
+                self.ownedViewTopConstraint = $0.top == $0.superview!.top // - CGFloat(30)
+            }
             $0.left == $0.superview!.left
             $0.right == $0.superview!.right
         }
