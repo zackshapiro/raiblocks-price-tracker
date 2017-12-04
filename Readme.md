@@ -15,7 +15,7 @@ Contributions are welcome! Fork the repo, make your changes, try to stay in the 
 ## Request for features 
 Some features I'd love, if you want to contribute: 
 
--[] The Today Widget is huge, add a second or third row of content
+-[ ] The Today Widget is huge, add a second or third row of content
 
 -[] USD equiv
 
