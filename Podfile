@@ -6,8 +6,6 @@ use_frameworks!
 workspace 'Rai'
 
 target 'Rai' do
-  pod 'SwiftyJSON'
-  pod 'ReactiveSwift'
   pod 'Cartography'
 end
 

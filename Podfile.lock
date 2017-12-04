@@ -1,21 +1,15 @@
 PODS:
   - Cartography (2.0.0)
-  - ReactiveSwift (2.0.1):
-    - Result (~> 3.2)
-  - Result (3.2.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - Cartography
-  - ReactiveSwift
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   Cartography: d295eb25ab54bb57eecd8c2f04e9648c850f1281
-  ReactiveSwift: 60a29ff35988a964fd2bb759755cb6594de523fc
-  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 3f562a88a7957b38c98807a30f73010e39efb638
+PODFILE CHECKSUM: 4f97e9db9a430803673b89c4477311dd52c397ff
 
 COCOAPODS: 1.2.1
