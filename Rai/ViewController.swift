@@ -170,7 +170,7 @@ class ViewController: UIViewController {
         let btcBalanceLabel: UILabel = {
             let l = UILabel()
             l.font = UIFont.systemFont(ofSize: 24, weight: .regular)
-            l.textColor = UIColor.black.withAlphaComponent(0.6)
+            l.textColor = UIColor.from(rgb: 0x438297).withAlphaComponent(0.8)
             
             return l
         }()
