@@ -7,14 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C136EC8A8B01FF9402DE29 /* Pods_Rai.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EF7ED73DB7205883AF5E44 /* Pods_Rai.framework */; };
 		51857F6B1FB794BA00D040DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51857F6A1FB794BA00D040DC /* AppDelegate.swift */; };
 		51857F6D1FB794BA00D040DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51857F6C1FB794BA00D040DC /* ViewController.swift */; };
 		51857F701FB794BA00D040DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51857F6E1FB794BA00D040DC /* Main.storyboard */; };
 		51857F721FB794BA00D040DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51857F711FB794BA00D040DC /* Assets.xcassets */; };
 		51857F751FB794BA00D040DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51857F731FB794BA00D040DC /* LaunchScreen.storyboard */; };
+		51857F821FB79EAF00D040DC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51857F811FB79EAF00D040DC /* NotificationCenter.framework */; };
+		51857F851FB79EAF00D040DC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51857F841FB79EAF00D040DC /* TodayViewController.swift */; };
+		51857F881FB79EAF00D040DC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51857F861FB79EAF00D040DC /* MainInterface.storyboard */; };
+		51857F8C1FB79EAF00D040DC /* RaiToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51857F801FB79EAF00D040DC /* RaiToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		51857F921FB7A06D00D040DC /* xrb.png in Resources */ = {isa = PBXBuildFile; fileRef = 51857F911FB7A06D00D040DC /* xrb.png */; };
+		EFBD0B8B4012F8C071F5F4A8 /* Pods_RaiToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		51857F8A1FB79EAF00D040DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51857F5F1FB794BA00D040DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51857F7F1FB79EAF00D040DC;
+			remoteInfo = RaiToday;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		51857F901FB79EAF00D040DC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				51857F8C1FB79EAF00D040DC /* RaiToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		10EF7ED73DB7205883AF5E44 /* Pods_Rai.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rai.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F209633207E3050489B356 /* Pods-RaiToday.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiToday.release.xcconfig"; path = "Pods/Target Support Files/Pods-RaiToday/Pods-RaiToday.release.xcconfig"; sourceTree = "<group>"; };
 		51857F671FB794BA00D040DC /* Rai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51857F6A1FB794BA00D040DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51857F6C1FB794BA00D040DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +55,16 @@
 		51857F711FB794BA00D040DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51857F741FB794BA00D040DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		51857F761FB794BA00D040DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51857F801FB79EAF00D040DC /* RaiToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RaiToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		51857F811FB79EAF00D040DC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		51857F841FB79EAF00D040DC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		51857F871FB79EAF00D040DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		51857F891FB79EAF00D040DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51857F911FB7A06D00D040DC /* xrb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xrb.png; sourceTree = "<group>"; };
+		5489F35131253BB6AF27B899 /* Pods-RaiToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiToday/Pods-RaiToday.debug.xcconfig"; sourceTree = "<group>"; };
+		7CB658829FBA8689D26DD186 /* Pods-Rai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rai.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rai/Pods-Rai.release.xcconfig"; sourceTree = "<group>"; };
+		B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5152A5D25A5388CEDDF283F /* Pods-Rai.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rai.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rai/Pods-Rai.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +72,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20C136EC8A8B01FF9402DE29 /* Pods_Rai.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51857F7D1FB79EAF00D040DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51857F821FB79EAF00D040DC /* NotificationCenter.framework in Frameworks */,
+				EFBD0B8B4012F8C071F5F4A8 /* Pods_RaiToday.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B99046D30DF1D188E292E3F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10EF7ED73DB7205883AF5E44 /* Pods_Rai.framework */,
+				51857F811FB79EAF00D040DC /* NotificationCenter.framework */,
+				B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		426AF03AD8E856C20BE2E83A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F5152A5D25A5388CEDDF283F /* Pods-Rai.debug.xcconfig */,
+				7CB658829FBA8689D26DD186 /* Pods-Rai.release.xcconfig */,
+				5489F35131253BB6AF27B899 /* Pods-RaiToday.debug.xcconfig */,
+				48F209633207E3050489B356 /* Pods-RaiToday.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		51857F5E1FB794BA00D040DC = {
 			isa = PBXGroup;
 			children = (
 				51857F691FB794BA00D040DC /* Rai */,
+				51857F831FB79EAF00D040DC /* RaiToday */,
 				51857F681FB794BA00D040DC /* Products */,
+				426AF03AD8E856C20BE2E83A /* Pods */,
+				2B99046D30DF1D188E292E3F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				51857F671FB794BA00D040DC /* Rai.app */,
+				51857F801FB79EAF00D040DC /* RaiToday.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,6 +142,17 @@
 			path = Rai;
 			sourceTree = "<group>";
 		};
+		51857F831FB79EAF00D040DC /* RaiToday */ = {
+			isa = PBXGroup;
+			children = (
+				51857F841FB79EAF00D040DC /* TodayViewController.swift */,
+				51857F861FB79EAF00D040DC /* MainInterface.storyboard */,
+				51857F891FB79EAF00D040DC /* Info.plist */,
+				51857F911FB7A06D00D040DC /* xrb.png */,
+			);
+			path = RaiToday;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,18 +160,42 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51857F791FB794BA00D040DC /* Build configuration list for PBXNativeTarget "Rai" */;
 			buildPhases = (
+				7C7211E21A82E18B7051ADDF /* [CP] Check Pods Manifest.lock */,
 				51857F631FB794BA00D040DC /* Sources */,
 				51857F641FB794BA00D040DC /* Frameworks */,
 				51857F651FB794BA00D040DC /* Resources */,
+				C1C9264BFFBCCDC1B76BBE63 /* [CP] Embed Pods Frameworks */,
+				2B5499536596170CFE197435 /* [CP] Copy Pods Resources */,
+				51857F901FB79EAF00D040DC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				51857F8B1FB79EAF00D040DC /* PBXTargetDependency */,
 			);
 			name = Rai;
 			productName = Rai;
 			productReference = 51857F671FB794BA00D040DC /* Rai.app */;
 			productType = "com.apple.product-type.application";
+		};
+		51857F7F1FB79EAF00D040DC /* RaiToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51857F8F1FB79EAF00D040DC /* Build configuration list for PBXNativeTarget "RaiToday" */;
+			buildPhases = (
+				9D09887EE04AD299F32755D5 /* [CP] Check Pods Manifest.lock */,
+				51857F7C1FB79EAF00D040DC /* Sources */,
+				51857F7D1FB79EAF00D040DC /* Frameworks */,
+				51857F7E1FB79EAF00D040DC /* Resources */,
+				68ED0ED64E08B1AE8A0668C1 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaiToday;
+			productName = RaiToday;
+			productReference = 51857F801FB79EAF00D040DC /* RaiToday.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +208,10 @@
 				ORGANIZATIONNAME = "Zack Shapiro";
 				TargetAttributes = {
 					51857F661FB794BA00D040DC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					51857F7F1FB79EAF00D040DC = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -114,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				51857F661FB794BA00D040DC /* Rai */,
+				51857F7F1FB79EAF00D040DC /* RaiToday */,
 			);
 		};
 /* End PBXProject section */
@@ -129,7 +247,94 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51857F7E1FB79EAF00D040DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51857F881FB79EAF00D040DC /* MainInterface.storyboard in Resources */,
+				51857F921FB7A06D00D040DC /* xrb.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B5499536596170CFE197435 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rai/Pods-Rai-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68ED0ED64E08B1AE8A0668C1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RaiToday/Pods-RaiToday-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C7211E21A82E18B7051ADDF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D09887EE04AD299F32755D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C1C9264BFFBCCDC1B76BBE63 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rai/Pods-Rai-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		51857F631FB794BA00D040DC /* Sources */ = {
@@ -141,7 +346,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51857F7C1FB79EAF00D040DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51857F851FB79EAF00D040DC /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51857F8B1FB79EAF00D040DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51857F7F1FB79EAF00D040DC /* RaiToday */;
+			targetProxy = 51857F8A1FB79EAF00D040DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		51857F6E1FB794BA00D040DC /* Main.storyboard */ = {
@@ -158,6 +379,14 @@
 				51857F741FB794BA00D040DC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		51857F861FB79EAF00D040DC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51857F871FB79EAF00D040DC /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,7 +501,9 @@
 		};
 		51857F7A1FB794BA00D040DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5152A5D25A5388CEDDF283F /* Pods-Rai.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBDVRZUPNN;
@@ -281,13 +512,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.zackshapiro.Rai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		51857F7B1FB794BA00D040DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CB658829FBA8689D26DD186 /* Pods-Rai.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EBDVRZUPNN;
@@ -295,6 +528,38 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zackshapiro.Rai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		51857F8D1FB79EAF00D040DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5489F35131253BB6AF27B899 /* Pods-RaiToday.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EBDVRZUPNN;
+				INFOPLIST_FILE = RaiToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zackshapiro.Rai.RaiToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51857F8E1FB79EAF00D040DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F209633207E3050489B356 /* Pods-RaiToday.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = EBDVRZUPNN;
+				INFOPLIST_FILE = RaiToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zackshapiro.Rai.RaiToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -317,6 +582,15 @@
 			buildConfigurations = (
 				51857F7A1FB794BA00D040DC /* Debug */,
 				51857F7B1FB794BA00D040DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51857F8F1FB79EAF00D040DC /* Build configuration list for PBXNativeTarget "RaiToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51857F8D1FB79EAF00D040DC /* Debug */,
+				51857F8E1FB79EAF00D040DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
