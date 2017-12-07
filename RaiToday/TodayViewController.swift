@@ -36,7 +36,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard error == nil else { return }
 
-
             if let data = data, let xrb = try? JSONDecoder().decode(XRBPair.self, from: data) {
                 DispatchQueue.main.async {
                     self.label.text = xrb.xrbPair.last
@@ -49,19 +48,33 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let button = UIButton()
+        button.addTarget(self, action: #selector(openApp), for: .touchUpInside)
+        view.addSubview(button)
+        constrain(button) {
+            $0.edges == $0.superview!.edges
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    @objc func openApp() {
+        guard let url = URL(string: "rai://") else { return }
+
+        self.extensionContext?.open(url, completionHandler: nil)
+    }
     
-    func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
+        print("we here")
         getPriceAndSetLabel()
         
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
         // If there's an update, use NCUpdateResult.NewData
         
-        completionHandler(NCUpdateResult.newData)
+        completionHandler(.newData)
     }
 }
