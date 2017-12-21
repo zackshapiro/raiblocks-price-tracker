@@ -18,6 +18,8 @@
 		51857F8C1FB79EAF00D040DC /* RaiToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51857F801FB79EAF00D040DC /* RaiToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51857F921FB7A06D00D040DC /* xrb.png in Resources */ = {isa = PBXBuildFile; fileRef = 51857F911FB7A06D00D040DC /* xrb.png */; };
 		519B4D741FD5ABA2006B7B6E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519B4D731FD5ABA2006B7B6E /* UIColor+Extension.swift */; };
+		51C684971FEB63CA00943815 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C684961FEB63CA00943815 /* Pairs.swift */; };
+		51C684981FEB63E300943815 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C684961FEB63CA00943815 /* Pairs.swift */; };
 		EFBD0B8B4012F8C071F5F4A8 /* Pods_RaiToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,7 @@
 		51857F911FB7A06D00D040DC /* xrb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xrb.png; sourceTree = "<group>"; };
 		519B4D731FD5ABA2006B7B6E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		519B4D751FD5B5A5006B7B6E /* Rai.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; name = Rai.mobileprovision; path = ../../Downloads/Rai.mobileprovision; sourceTree = "<group>"; };
+		51C684961FEB63CA00943815 /* Pairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pairs.swift; sourceTree = "<group>"; };
 		5489F35131253BB6AF27B899 /* Pods-RaiToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RaiToday.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RaiToday/Pods-RaiToday.debug.xcconfig"; sourceTree = "<group>"; };
 		7CB658829FBA8689D26DD186 /* Pods-Rai.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rai.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rai/Pods-Rai.release.xcconfig"; sourceTree = "<group>"; };
 		B96E0976889508CEAAF88AE3 /* Pods_RaiToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RaiToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +139,7 @@
 			children = (
 				51857F6A1FB794BA00D040DC /* AppDelegate.swift */,
 				51857F6C1FB794BA00D040DC /* ViewController.swift */,
+				51C684961FEB63CA00943815 /* Pairs.swift */,
 				519B4D731FD5ABA2006B7B6E /* UIColor+Extension.swift */,
 				51857F711FB794BA00D040DC /* Assets.xcassets */,
 				51857F731FB794BA00D040DC /* LaunchScreen.storyboard */,
@@ -343,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				519B4D741FD5ABA2006B7B6E /* UIColor+Extension.swift in Sources */,
+				51C684971FEB63CA00943815 /* Pairs.swift in Sources */,
 				51857F6D1FB794BA00D040DC /* ViewController.swift in Sources */,
 				51857F6B1FB794BA00D040DC /* AppDelegate.swift in Sources */,
 			);
@@ -353,6 +358,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51857F851FB79EAF00D040DC /* TodayViewController.swift in Sources */,
+				51C684981FEB63E300943815 /* Pairs.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

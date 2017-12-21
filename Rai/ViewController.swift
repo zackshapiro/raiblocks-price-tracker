@@ -10,21 +10,6 @@ import UIKit
 import Cartography
 
 
-struct XRBPair: Codable {
-
-    let pairs: [String: Pair]
-
-    var xrbPair: Pair {
-        return pairs.filter { $0.key == "XRB_BTC" }.first!.value
-    }
-
-    struct Pair: Codable {
-        let last: String
-    }
-
-}
-
-
 class ViewController: UIViewController {
     
     private weak var scrollView: UIScrollView?
@@ -49,27 +34,6 @@ class ViewController: UIViewController {
 
     private var isiPhoneX: Bool {
         return UIScreen.main.bounds.height == 812
-    }
-    
-    @objc private func getPriceAndSetLabel() {
-        guard let url = URL(string: "https://mercatox.com/public/json24") else { fatalError("url failed to cast") }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else { return }
-            
-            if let data = data, let xrb = try? JSONDecoder().decode(XRBPair.self, from: data) {
-                let lastTradePrice = xrb.xrbPair.last
-
-                DispatchQueue.main.async {
-                    self.label?.text = lastTradePrice
-                    self.textField?.resignFirstResponder()
-                    self.scrollView?.refreshControl?.endRefreshing()
-
-                    self.lastTradePrice = Double(lastTradePrice)
-                    self.calculateBTCAmount()
-                }
-            }
-        }.resume()
     }
     
     init() {
@@ -206,5 +170,52 @@ class ViewController: UIViewController {
         UserDefaults.standard.set(balance, forKey: "xrbAmount")
         
         calculateBTCAmount()
+    }
+
+    @objc private func getPriceAndSetLabel() {
+        guard let url = URL(string: "https://bitgrail.com/api/v1/BTC-XRB/ticker") else { return fetchPriceFromMercatox() }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard error == nil else { return self.fetchPriceFromMercatox() }
+
+            if let data = data, let xrb = try? JSONDecoder().decode(BGXRBPair.self, from: data) {
+                self.setLabel(lastTradePrice: xrb.xrbPair)
+            } else {
+                self.fetchPriceFromMercatox()
+            }
+        }.resume()
+    }
+
+    private func fetchPriceFromMercatox() {
+        guard let url = URL(string: "https://mercatox.com/public/json24") else { return }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard error == nil else {
+                DispatchQueue.main.async {
+                    self.setLabel(lastTradePrice: "0")
+                }
+
+                return
+            }
+
+            if let data = data, let xrb = try? JSONDecoder().decode(MercXRBPair.self, from: data) {
+                self.setLabel(lastTradePrice: xrb.xrbPair.last)
+            } else {
+                DispatchQueue.main.async {
+                    self.setLabel(lastTradePrice: "0")
+                }
+            }
+        }.resume()
+    }
+
+    private func setLabel(lastTradePrice price: String) {
+        DispatchQueue.main.async {
+            self.label?.text = price
+            self.textField?.resignFirstResponder()
+            self.scrollView?.refreshControl?.endRefreshing()
+
+            self.lastTradePrice = Double(price)
+            self.calculateBTCAmount()
+        }
     }
 }

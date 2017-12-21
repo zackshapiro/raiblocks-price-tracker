@@ -11,39 +11,48 @@ import NotificationCenter
 import Cartography
 
 
-struct XRBPair: Codable {
-
-    let pairs: [String: Pair]
-
-    var xrbPair: Pair {
-        return pairs.filter { $0.key == "XRB_BTC" }.first!.value
-    }
-
-    struct Pair: Codable {
-        let last: String
-    }
-
-}
-
-
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var label: UILabel!
-    
-    func getPriceAndSetLabel() {
-        guard let url = URL(string: "https://mercatox.com/public/json24") else { return }
-        
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else { return }
 
-            if let data = data, let xrb = try? JSONDecoder().decode(XRBPair.self, from: data) {
+    private func fetchLatestBTCPrice() {
+        guard let url = URL(string: "https://bitgrail.com/api/v1/BTC-XRB/ticker") else { return }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard error == nil else { return self.fetchPriceFromMercatox() }
+
+            if let data = data, let xrb = try? JSONDecoder().decode(BGXRBPair.self, from: data) {
                 DispatchQueue.main.async {
-                    self.label.text = xrb.xrbPair.last
+                    self.setLabel(withPrice: xrb.xrbPair)
                 }
             } else {
-                print("failed")
+                self.fetchPriceFromMercatox()
             }
         }.resume()
+    }
+
+    private func fetchPriceFromMercatox() {
+        guard let url = URL(string: "https://mercatox.com/public/json24") else { return }
+
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard error == nil else {
+                self.setLabel(withPrice: "0")
+
+                return
+            }
+
+            if let data = data, let xrb = try? JSONDecoder().decode(MercXRBPair.self, from: data) {
+                self.setLabel(withPrice: xrb.xrbPair.last)
+            } else {
+                self.setLabel(withPrice: "0")
+            }
+        }.resume()
+    }
+
+    private func setLabel(withPrice price: String) {
+        DispatchQueue.main.async {
+            self.label.text = price
+        }
     }
     
     override func viewDidLoad() {
@@ -68,8 +77,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
-        print("we here")
-        getPriceAndSetLabel()
+        fetchLatestBTCPrice()
         
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
