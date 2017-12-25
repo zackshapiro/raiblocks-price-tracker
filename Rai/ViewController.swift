@@ -83,6 +83,7 @@ class ViewController: UIViewController {
         
         let textField: UITextField = {
             let t = UITextField()
+            t.delegate = self
             t.placeholder = "10000"
             if let amount = amountIOwn {
                 t.text = String(amount)
@@ -173,6 +174,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func getPriceAndSetLabel() {
+        textField?.resignFirstResponder()
         guard let url = URL(string: "https://bitgrail.com/api/v1/BTC-XRB/ticker") else { return fetchPriceFromMercatox() }
 
         URLSession.shared.dataTask(with: url) { data, _, error in
@@ -211,11 +213,31 @@ class ViewController: UIViewController {
     private func setLabel(lastTradePrice price: String) {
         DispatchQueue.main.async {
             self.label?.text = price
-            self.textField?.resignFirstResponder()
             self.scrollView?.refreshControl?.endRefreshing()
 
             self.lastTradePrice = Double(price)
             self.calculateBTCAmount()
         }
     }
+}
+
+
+extension ViewController: UITextFieldDelegate {
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        if string == "." && text.contains(".") { return false }
+
+        // In the event of a paste with comma
+        if string.contains(",") {
+            self.textField?.text = string.reduce("") {
+                return $1 == "," ? $0 : ($0 + String($1))
+            }
+
+            return false // early return since we're manually setting the text field
+        }
+
+        return true
+    }
+
 }
