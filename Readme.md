@@ -1,6 +1,6 @@
 # Raiblocks Price Tracker
 
-This is a small iOS app and Today widget that tracks the price of [RaiBlocks](https://raiblocks.net) [$XRB](https://coinmarketcap.com/currencies/raiblocks) on Mercatox
+This is a small iOS app and Today widget that tracks the price of [RaiBlocks](https://raiblocks.net) [$XRB](https://coinmarketcap.com/currencies/raiblocks) on BitGrail and Mercatox
 
 ## Installation
 
@@ -19,11 +19,6 @@ Some features I'd love, if you want to contribute:
 - USD equivilant
 - Currency conversion (for our non-USD friends)
 - Anything that you think would make this better!
-
-
-#### Why Mercatox?
-
-Because currently it's the exchange that sells RaiBlocks with the best API
 
 ---
 
