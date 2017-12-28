@@ -9,44 +9,31 @@
 import UIKit
 import NotificationCenter
 import Cartography
+import SwiftyJSON
 
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     @IBOutlet weak var label: UILabel!
-
-    private func fetchLatestBTCPrice() {
-        guard let url = URL(string: "https://bitgrail.com/api/v1/BTC-XRB/ticker") else { return }
-
+    
+    private func fetchPrice(_ completion: @escaping ((Double?, Error?) -> ())) {
+        let url = URL(string: "https://api.coinmarketcap.com/v1/ticker/raiblocks/")!
+        
         URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else { return self.fetchPriceFromMercatox() }
-
-            if let data = data, let xrb = try? JSONDecoder().decode(BGXRBPair.self, from: data) {
-                DispatchQueue.main.async {
-                    self.setLabel(withPrice: xrb.xrbPair)
-                }
-            } else {
-                self.fetchPriceFromMercatox()
-            }
-        }.resume()
-    }
-
-    private func fetchPriceFromMercatox() {
-        guard let url = URL(string: "https://mercatox.com/public/json24") else { return }
-
-        URLSession.shared.dataTask(with: url) { data, _, error in
-            guard error == nil else {
-                self.setLabel(withPrice: "0")
-
+            if let error = error {
+                completion(nil, error)
                 return
             }
-
-            if let data = data, let xrb = try? JSONDecoder().decode(MercXRBPair.self, from: data) {
-                self.setLabel(withPrice: xrb.xrbPair.last)
+            
+            if let data = data {
+                let json = JSON(data)[0].dictionaryValue
+                let stringVal = json["price_btc"]?.stringValue ?? ""
+                let converted = Double(stringVal)
+                completion(converted, nil)
             } else {
-                self.setLabel(withPrice: "0")
+                completion(0, nil)
             }
-        }.resume()
+            }.resume()
     }
 
     private func setLabel(withPrice price: String) {
@@ -77,7 +64,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
-        fetchLatestBTCPrice()
+        self.fetchPrice { price, error in
+            if let price = price {
+                self.setLabel(withPrice: String(price))
+            }
+        }
         
         // If an error is encountered, use NCUpdateResult.Failed
         // If there's no update required, use NCUpdateResult.NoData
